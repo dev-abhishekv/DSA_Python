@@ -1,3 +1,4 @@
+# Definition for singly-linked list node
 class Node :
     def __init__(self, data) :
         self.data = data
