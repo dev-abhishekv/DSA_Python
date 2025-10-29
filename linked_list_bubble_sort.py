@@ -7,20 +7,16 @@ def bubbleSort(head) :
     if head is None:
         return None
 
-    swap_flag = False
+    count = 0
 
     curr = head
 
     while curr:
-        curr_next = curr
-        while curr_next and curr_next.next:
-            if curr_next.data > curr_next.next.data:
-                curr_next.data, curr_next.next.data = curr_next.next.data, curr_next.data
-                if not swap_flag:
-                    swap_flag = True
+        curr_next = curr.next
+        while curr_next:
+            if curr.data > curr_next.data:
+                curr_next.data, curr.data = curr.data, curr_next.data
             curr_next =curr_next.next
-        if not swap_flag:
-            break
         curr = curr.next
 
     return head
