@@ -62,11 +62,11 @@ class QueueUsingLL:
         # Inserts an element in the Queue
         newNode = Node(data)
         if self.__head is None:
-            self.__head = self.__tail = newNode
+            self.__head = newNode
         else:
             self.__tail.next = newNode
-            self.__tail = self.__tail.next
         
+        self.__tail = newNode
         self.__count += 1
 
 
