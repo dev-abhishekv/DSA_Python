@@ -35,7 +35,6 @@ class QueueUsingArray:
 
 #Following is the structure of the node class for a Singly Linked List
 class Node :
-
     def __init__(self, data) :
         self.data = data
         self.next = None
@@ -44,7 +43,6 @@ class Node :
 class QueueUsingLL:
     # Constructor
     def __init__(self):
-        self.__queue = []
         self.__count = 0
         self.__head = self.__tail = None
 
