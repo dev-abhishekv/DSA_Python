@@ -1,3 +1,5 @@
+from queue import Queue
+
 # Create Tree Node Class
 class BinaryTreeNode:
     def __init__(self, data):
@@ -36,6 +38,40 @@ def tree_input():
     root_node.right = right_child
 
     return root_node
+
+#Taking level-order input
+def take_input_level_wise():
+    levelOrder = list(map(int, input("Enter List: ").split(" ")))
+    start = 0
+
+    length = len(levelOrder)
+
+    root = BinaryTreeNode(levelOrder[start])
+    start += 1
+
+    q = Queue()
+    q.put(root)
+
+    while not q.empty():
+        currentNode = q.get()
+
+        leftChild = levelOrder[start]
+        start += 1
+
+        if leftChild != -1:
+            leftNode = BinaryTreeNode(leftChild)
+            currentNode.left =leftNode
+            q.put(leftNode)
+
+        rightChild = levelOrder[start]
+        start += 1
+
+        if rightChild != -1:
+            rightNode = BinaryTreeNode(rightChild)
+            currentNode.right =rightNode
+            q.put(rightNode)
+
+    return root
 
 # Count the number of nodes
 def tree_node_count(root: BinaryTreeNode) -> int:
