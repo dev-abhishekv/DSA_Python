@@ -51,7 +51,7 @@ display_formatted_tree(bt_root_node)
 # Take User Input
 def tree_input():
     data = int(input("Enter Data: "))
-    if data is -1:
+    if data == -1:
         return None
 
     root_node = BinaryTreeNode(data)
