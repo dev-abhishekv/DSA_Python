@@ -46,6 +46,9 @@ def take_input_level_wise():
 
     length = len(levelOrder)
 
+    if length<=0 or levelOrder[0]==-1:
+        return None
+    
     root = BinaryTreeNode(levelOrder[start])
     start += 1
 
