@@ -21,26 +21,6 @@ def reverseLinkedList(head, terminate_node):
 
     return prev, head
 
-def reverseLinkedList(head, terminate_node):
-    """
-    Reverses a linked list.
-    """
-
-    if head is None:
-        return head, head
-
-    prev = next = tail = None
-    curr = head
-
-    while curr and curr != terminate_node:
-        next = curr.next
-        curr.next = prev
-        prev = curr
-        curr = next
-    
-    head.next = None
-
-    return prev, head
 
 def kReverse(head, m):
     if head is None or m == 0:
