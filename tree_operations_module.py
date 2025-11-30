@@ -85,3 +85,26 @@ def tree_node_count(root: BinaryTreeNode) -> int:
 	right_node_count = tree_node_count(root.right)
 
 	return 1 + left_node_count + right_node_count
+
+# Level Wise Print
+def print_level_wise(root):
+    if root is None:
+        return
+
+    inputQ = Queue()
+    outputQ = Queue()
+    inputQ.put(root)
+
+    while not inputQ.empty():
+       
+        while not inputQ.empty():
+       
+            curr = inputQ.get()
+            print(curr.data, end=' ')
+            if curr.left!=None:
+                outputQ.put(curr.left)
+            if curr.right!=None:
+                outputQ.put(curr.right)
+       
+        print()
+        inputQ, outputQ = outputQ, inputQ
