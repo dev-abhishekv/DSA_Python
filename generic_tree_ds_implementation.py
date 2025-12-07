@@ -48,6 +48,10 @@ def take_user_input():
 
 # Node Count in Generic Tree
 def generic_tree_node_count(root):
+    # Not the base case but edge case
+    if root is None:
+        return 0
+    
     count = 1
 
     for child in root.children:
